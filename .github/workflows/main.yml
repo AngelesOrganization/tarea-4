@@ -60,5 +60,5 @@ jobs:
           script: |
             docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
             mkdir -p ~/deploys/${{ github.repository }} && cd ~/deploys/${{ github.repository }}
-            wget https://raw.githubusercontent.com/${{ github.repository }}/main/src/ops/docker/docker-compose.yaml -O ~/deploys/${{ github.repository }}/docker-compose.yaml
+            wget https://raw.githubusercontent.com/${{ github.repository }}/main/ops/docker/docker-compose.yaml -O ~/deploys/${{ github.repository }}/docker-compose.yaml
             docker-compose up -d
