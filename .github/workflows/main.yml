@@ -59,7 +59,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-            docker pull ${{ env.REGISTRY }}/`echo ${{ env.IMAGE_NAME }} | tr '[:upper:]' '[:lower:]'`
+            docker pull ${{ env.REGISTRY }}/`echo ${{ env.IMAGE_NAME }} | tr '[:upper:]' '[:lower:]'`:main
             mkdir -p ~/deploys/${{ github.repository }} && cd ~/deploys/${{ github.repository }}
             wget https://raw.githubusercontent.com/${{ github.repository }}/main/ops/docker/docker-compose.yaml -O ~/deploys/${{ github.repository }}/docker-compose.yaml
             docker-compose up -d
