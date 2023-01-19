@@ -1,0 +1,17 @@
+    * {
+        background-color: rgb(234, 234, 245);
+    }
+    
+    .titulo {
+        text-align: center;
+        text-decoration: underline;
+        font-family: cursive;
+        font-size: 40px;
+    }
+    
+    .video {
+        width: 1500px;
+        height: 840px;
+        margin: 10px auto;
+        display: block;
+    }
