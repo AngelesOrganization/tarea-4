@@ -1,0 +1,67 @@
+table {
+    font-family: Georgia, serif;
+    border: 6px solid #24943A;
+    background-color: #D4EED1;
+    width: 100%;
+    text-align: center;
+}
+
+table td,
+table th {
+    border: 1px solid #24943A;
+    padding: 3px 2px;
+}
+
+table tbody td {
+    font-size: 13px;
+}
+
+.tabla_corta {
+    width: 30vh;
+}
+
+table th {
+    background: #24943A;
+    background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+    background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+    background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+    border-bottom: 0px solid #444444;
+}
+
+table tfoot {
+    font-size: 13px;
+    font-weight: bold;
+    color: #F0F0F0;
+    background: #24943A;
+    background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+    background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+    background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
+    border-top: 1px solid #24943A;
+}
+
+table tfoot td {
+    font-size: 13px;
+}
+
+table tfoot .links {
+    text-align: right;
+}
+
+table tfoot .links a {
+    display: inline-block;
+    background: #FFFFFF;
+    color: #24943A;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+body {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+h1 {
+    font-size: 36px;
+    color: rgb(72, 97, 55);
+    text-align: center;
+}
