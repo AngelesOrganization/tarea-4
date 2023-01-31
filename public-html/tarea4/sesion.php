@@ -40,12 +40,13 @@
     
     }
     ?>
-    <form method="POST" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" name="sesion">
+    <form method="POST" action="" name="sesion">
 
         <h1>Acceso concedido</h1>
         <hr>
         <p><b> Introduzca telefono y email </b></p>
         <br>
+        <?php echo phpinfo()?>
 
         <div class="telefono">
             <label>Teléfono:
