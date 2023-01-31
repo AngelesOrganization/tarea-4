@@ -4,4 +4,4 @@ services:
         container_name: tarea-4
         ports:
             - '4000:80'
-        image: ghcr.io/angelesorganization/tarea-4:main
+        image: ghcr.io/angelesorganization/tareas-apache:main
