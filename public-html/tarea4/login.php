@@ -16,7 +16,7 @@
 
     <?php echo phpinfo()?>
 
-    <form method="POST" action="" name="login">
+    <form method="POST" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" name="login">
 
         <div class="usuario">
             <label>Usuario:
