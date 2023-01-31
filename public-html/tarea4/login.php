@@ -19,7 +19,7 @@
             $_SESSION['tlf'] = "";
             $_SESSION['email'] = "";
             echo "Credenciales correctas";
-            header("Location: http://localhost/tarea4/sesion.php");
+            echo "<script> location.href='http://localhost/tarea4/sesion.php'; </script>";
             exit;
         } else {
             echo "Credenciales incorrectas";
