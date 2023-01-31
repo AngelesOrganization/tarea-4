@@ -14,7 +14,7 @@
     <p><b> Introduzca usuario y contraseña </b></p>
     <br>
 
-    <?php phpinfo()?>
+    <?php echo phpinfo()?>
 
     <form method="POST" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" name="login">
 
