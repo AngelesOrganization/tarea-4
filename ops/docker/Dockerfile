@@ -1,4 +1,4 @@
-FROM php:8.0-apache
+FROM php:8.1.6-apache
 WORKDIR /var/www/html
 COPY ./public-html/tarea4 tarea4
 COPY ./public-html/tarea5 tarea5
