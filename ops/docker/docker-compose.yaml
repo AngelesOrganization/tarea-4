@@ -1,7 +1,7 @@
 version: '3.3'
 services:
     my-apache2:
-        container_name: tarea-4
+        container_name: tareas-apache
         ports:
             - '4000:80'
         image: ghcr.io/angelesorganization/tareas-apache:main
