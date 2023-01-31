@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +14,6 @@
 <body class="cuadro">
 
     <?php
-    session_start();
     if (isset($_POST['user']) && isset($_POST['pass'])) {
         if ($_POST['user'] == "foc" && $_POST['pass'] == "Fdwes!22") {
             $_SESSION['tlf'] = "";
