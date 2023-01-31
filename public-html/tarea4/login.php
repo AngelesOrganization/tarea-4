@@ -19,7 +19,7 @@
             $_SESSION['tlf'] = "";
             $_SESSION['email'] = "";
             echo "Credenciales correctas";
-            echo "<script> location.href='http://localhost/tarea4/sesion.php'; </script>";
+            echo "<script> location.href='http://angeles-fernandez-gomez.duckdns.org//tarea4/sesion.php'; </script>";
             exit;
         } else {
             echo "Credenciales incorrectas";
