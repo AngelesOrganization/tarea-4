@@ -36,7 +36,7 @@
         if ($_POST['user'] == "foc" && $_POST['pass'] == "Fdwes!22") {
             $_SESSION['tlf'] = "";
             $_SESSION['email'] = "";
-            echo "<script> location.href='http://localhost/tarea4/sesion.php'; </script>";
+            echo "<script> location.href='http://angeles-fernandez-gomez.duckdns.org/tarea4/sesion.php'; </script>";
             exit;
         } else {
             echo "Credenciales incorrectas";
