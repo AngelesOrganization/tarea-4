@@ -9,19 +9,19 @@
         if (isset($_POST['telefono']) && isset($_POST['email'])) {
             $_SESSION['tlf'] = $_POST['telefono'];
             $_SESSION['email'] = $_POST['email'];
-            header("Location: http://localhost/tarea4/sesion.php");
+            header("Location: http://angeles-fernandez-gomez.duckdns.org/tarea4/sesion.php");
             exit;
         }
     } elseif (isset($_POST['borrar'])) {
         $_SESSION['tlf'] = "";
         $_SESSION['email'] = "";    
         setcookie('horario', '', time() - 3600);
-        header("Location: http://localhost/tarea4/sesion.php");
+        header("Location: http://angeles-fernandez-gomez.duckdns.org/tarea4/sesion.php");
         exit;
     } elseif (isset($_POST['grabar_horario'])) {
         if (isset($_POST['horario'])) {
             setcookie('horario', $_POST['horario'], time() + 3600);
-            header("Location: http://localhost/tarea4/sesion.php");
+            header("Location: http://angeles-fernandez-gomez.duckdns.org/tarea4/sesion.php");
             exit;
         }
     } elseif (isset($_POST['borrar_horario'])) {
