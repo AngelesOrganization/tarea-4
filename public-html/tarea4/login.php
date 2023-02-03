@@ -10,7 +10,13 @@
 
 <body class="cuadro">
 
-<?php
+    <h1>Acceso a la pagina</h1>
+    <hr>
+    <p><b> Introduzca usuario y contraseña </b></p>
+    <br>
+
+    <form method="POST" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" name="login">
+    <?php
     session_start();
     if (isset($_POST['user']) && isset($_POST['pass'])) {
         if ($_POST['user'] == "foc" && $_POST['pass'] == "Fdwes!22") {
@@ -23,14 +29,6 @@
         }
     }
     ?>
-    
-    <h1>Acceso a la pagina</h1>
-    <hr>
-    <p><b> Introduzca usuario y contraseña </b></p>
-    <br>
-
-    <form method="POST" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" name="login">
-
         <div class="usuario">
             <label>Usuario:
                 <input type="text" name="user" pattern="[a-zA-Z0-9]+" required />
