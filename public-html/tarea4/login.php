@@ -16,19 +16,7 @@
     <br>
 
     <form method="POST" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" name="login">
-    <?php
-    session_start();
-    if (isset($_POST['user']) && isset($_POST['pass'])) {
-        if ($_POST['user'] == "foc" && $_POST['pass'] == "Fdwes!22") {
-            $_SESSION['tlf'] = "";
-            $_SESSION['email'] = "";
-            echo "<script> location.href='http://angeles-fernandez-gomez.duckdns.org/tarea4/sesion.php'; </script>";
-            exit;
-        } else {
-            echo "Credenciales incorrectas";
-        }
-    }
-    ?>
+
         <div class="usuario">
             <label>Usuario:
                 <input type="text" name="user" pattern="[a-zA-Z0-9]+" required />
@@ -42,7 +30,19 @@
         </div>
         <button type="submit" name="login" value="login">Log In</button>
     </form>
-
+    <?php
+    session_start();
+    if (isset($_POST['user']) && isset($_POST['pass'])) {
+        if ($_POST['user'] == "foc" && $_POST['pass'] == "Fdwes!22") {
+            $_SESSION['tlf'] = "";
+            $_SESSION['email'] = "";
+            echo "<script> location.href='http://angeles-fernandez-gomez.duckdns.org/tarea4/sesion.php'; </script>";
+            exit;
+        } else {
+            echo "Credenciales incorrectas";
+        }
+    }
+    ?>
 
 </body>
 </html>
