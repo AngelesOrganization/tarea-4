@@ -47,7 +47,6 @@
         <hr>
         <p><b> Introduzca telefono y email </b></p>
         <br>
-        <?php echo phpinfo()?>
 
         <div class="telefono">
             <label>Teléfono:
