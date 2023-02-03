@@ -13,7 +13,7 @@
     <?php
     session_start();
     if (!isset($_SESSION['tlf']) || !isset($_SESSION['email'])) {
-        header('Location: http://angeles-fernandez-gomez.duckdns.org/tarea4/login.php');
+        header('Location: login.php');
         exit;
     }
 
