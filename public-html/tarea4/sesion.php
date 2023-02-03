@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Formulario sesion</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
     <?php
     session_start();
     if (!isset($_SESSION['tlf']) || !isset($_SESSION['email'])) {
@@ -40,6 +28,19 @@
     
     }
     ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Formulario sesion</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
     <form method="POST" action="" name="sesion">
 
         <h1>Acceso concedido</h1>
