@@ -55,7 +55,7 @@
             <?php foreach ($autor->libros as $libro) : ?>
                 <tr>
                     <td>
-                        <a href="<?php echo "http://localhost/tarea7/cliente.php?action=get_datos_libro&id=" . $libro->id  ?>">
+                        <a href="<?php echo "http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php?action=get_datos_libro&id=" . $libro->id  ?>">
                             <?php echo $libro->titulo ?>
                         </a>
                     </td>
@@ -64,9 +64,9 @@
         </table>
         <br />
         <!-- Enlace para volver a la lista de autores -->
-        <a href="http://localhost/tarea7/cliente.php?action=get_autores" alt="Lista de autores">Volver a la lista de autores</a>
+        <a href="http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php?action=get_autores" alt="Lista de autores">Volver a la lista de autores</a>
         <br>
-        <a href="http://localhost/tarea7/cliente.php" alt="Página principal">Volver a la página principal</a>
+        <a href="http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php" alt="Página principal">Volver a la página principal</a>
     <?php
     } elseif (isset($_GET["action"]) && $_GET["action"] == "get_autores") //sino muestra la lista de autores
     {
@@ -87,7 +87,7 @@
                 <tr>
                     <td>
                         <!-- Enlazamos cada nombre de autor con su informacion (primer if) -->
-                        <a href="<?php echo "http://localhost/tarea7/cliente.php?action=get_datos_autor&id=" . $autor->id  ?>">
+                        <a href="<?php echo "http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php?action=get_datos_autor&id=" . $autor->id  ?>">
                             <?php echo $autor->nombre . " " . $autor->apellidos ?>
                         </a>
                     </td>
@@ -97,7 +97,7 @@
         <br />
         <!-- Enlace para volver a la lista de autores -->
         <br>
-        <a href="http://localhost/tarea7/cliente.php" alt="Página principal">Volver a la página principal</a>
+        <a href="http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php" alt="Página principal">Volver a la página principal</a>
     <?php
     } elseif (isset($_GET["action"]) && $_GET["action"] == "get_libros") //sino muestra la lista de autores
     {
@@ -116,7 +116,7 @@
                 <tr>
                     <td>
                         <!-- Enlazamos cada nombre de autor con su informacion (primer if) -->
-                        <a href="<?php echo "http://localhost/tarea7/cliente.php?action=get_datos_libro&id=" . $libro->id  ?>">
+                        <a href="<?php echo "http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php?action=get_datos_libro&id=" . $libro->id  ?>">
                             <?php echo $libro->titulo . " " . $libro->f_publicacion ?>
                         </a>
                     </td>
@@ -126,7 +126,7 @@
         <br />
         <!-- Enlace para volver a la lista de autores -->
         <br>
-        <a href="http://localhost/tarea7/cliente.php" alt="Página principal">Volver a la página principal</a>
+        <a href="http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php" alt="Página principal">Volver a la página principal</a>
     <?php
     } elseif (isset($_GET["action"]) && isset($_GET["id"]) && $_GET["action"] == "get_datos_libro") //sino muestra la lista de autores
     {
@@ -149,7 +149,7 @@
             <tr>
                 <th>Autor</th>
                 <td>
-                    <a href="<?php echo "http://localhost/tarea7/cliente.php?action=get_datos_autor&id=" . $libro->autor->id  ?>">
+                    <a href="<?php echo "http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php?action=get_datos_autor&id=" . $libro->autor->id  ?>">
                         <?php echo $libro->autor->nombre ?>
                     </a>
                 </td>
@@ -157,15 +157,15 @@
         </table>
         <br />
         <!-- Enlace para volver a la lista de autores -->
-        <a href="http://localhost/tarea7/cliente.php?action=get_libros" alt="Lista de libros">Volver a la lista de libros</a>
+        <a href="http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php?action=get_libros" alt="Lista de libros">Volver a la lista de libros</a>
         <br>
-        <a href="http://localhost/tarea7/cliente.php" alt="Página principal">Volver a la página principal</a>
+        <a href="http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php" alt="Página principal">Volver a la página principal</a>
     <?php
     } else {
     ?>
         <ul>
-            <li><a href="<?php echo "http://localhost/tarea7/cliente.php?action=get_autores" ?>">Ver Autores</a></li>
-            <li><a href="<?php echo "http://localhost/tarea7/cliente.php?action=get_libros" ?>">Ver Libros</a></li>
+            <li><a href="<?php echo "http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php?action=get_autores" ?>">Ver Autores</a></li>
+            <li><a href="<?php echo "http://angeles-fernandez-gomez-tarea-7.duckdns.org/tarea7/cliente.php?action=get_libros" ?>">Ver Libros</a></li>
         </ul>
     <?php
     } ?>
