@@ -39,7 +39,25 @@
         }
 
         function getPokemonDetail(url) {
+            let asyncRequest = new XMLHttpRequest();
+            asyncRequest.onreadystatechange = stateChange;
+            asyncRequest.open("GET", url, true);
+            asyncRequest.send();
 
+            function stateChange() {
+                if (asyncRequest.readyState == 4 && asyncRequest.status == 200) {
+                    let respuesta = JSON.parse(asyncRequest.responseText);
+                    document.getElementById("name").innerHTML = respuesta.name;
+                    document.getElementById("hp").innerHTML = respuesta.stats[0].base_stat;
+                    document.getElementById("attack").innerHTML = respuesta.stats[1].base_stat;
+                    document.getElementById("defense").innerHTML = respuesta.stats[2].base_stat;
+                    document.getElementById("spattack").innerHTML = respuesta.stats[3].base_stat;
+                    document.getElementById("spdefense").innerHTML = respuesta.stats[4].base_stat;
+                    document.getElementById("speed").innerHTML = respuesta.stats[5].base_stat;
+                    document.getElementById("pkimage").setAttribute("src", respuesta.sprites.front_default);
+                    document.getElementById("detalle").removeAttribute("hidden");
+                }
+            }
         }
 
         function previous() {
@@ -59,53 +77,59 @@
     </script>
 
 <body onload="getPokemons();">
-    <input id="clickMe" type="button" value="previous" onclick="previous();" />
-    <input id="clickMe" type="button" value="next" onclick="next();" />
-    <label for='number-dd'><b>Limit</b></label>
-    <select onchange="newLimit(this.value)" id='number-dd' name='number'>
-        <option value=10>10</option>
-        <option value=20>20</option>
-        <option value=30>30</option>
-    </select>
-    <table id="pokemons">
-        <tr>
-            <th>Nombre</th>
-            <th>Detalle</th>
-            <tbody>
-
-            </tbody>
-        </tr>
-    </table>
-    <div>
-        <div id="pkmnImg">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png" alt="" width="200px" height="200px">
-        </div>
+    <div id="lista">
+        <input id="clickMe" type="button" value="previous" onclick="previous();" />
+        <input id="clickMe" type="button" value="next" onclick="next();" />
+        <label for='number-dd'><b>Limit</b></label>
+        <select onchange="newLimit(this.value)" id='number-dd' name='number'>
+            <option value=10>10</option>
+            <option value=20>20</option>
+            <option value=30>30</option>
+        </select>
+        <table id="pokemons">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="detalle" hidden>
         <div>
-            <p>Metapod</p>
-            <table>
+            <table id="detail">
                 <tr>
-                    <td>HP</td>
-                    <td>100</td>
+                    <th>Name</th>
+                    <td id="name"></td>
                 </tr>
                 <tr>
-                    <td>Attack</td>
-                    <td>100</td>
+                    <th>Image</th>
+                    <td><img id="pkimage" src="" alt="" width="200px" height="200px"></td>
                 </tr>
                 <tr>
-                    <td>Defense</td>
-                    <td>100</td>
+                    <th>HP</th>
+                    <td id="hp"></td>
                 </tr>
                 <tr>
-                    <td>SP-Attack</td>
-                    <td>100</td>
+                    <th>Attack</th>
+                    <td id="attack"></td>
                 </tr>
                 <tr>
-                    <td>SP-Deffense</td>
-                    <td>100</td>
+                    <th>Defense</th>
+                    <td id="defense"></td>
                 </tr>
                 <tr>
-                    <td>Speed</td>
-                    <td>100</td>
+                    <th>SP-Attack</th>
+                    <td id="spattack"></td>
+                </tr>
+                <tr>
+                    <th>SP-Defense</th>
+                    <td id="spdefense"></td>
+                </tr>
+                <tr>
+                    <th>Speed</th>
+                    <td id="speed"></td>
                 </tr>
             </table>
         </div>
