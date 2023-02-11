@@ -67,7 +67,7 @@ a {
 }
 
 @media (max-width: 500px) {
-    header h1 {
+    .titulo {
         font-size: 18px;
     }
     .contenido {
@@ -76,7 +76,7 @@ a {
 }
 
 @media (min-width: 501px) and (max-width: 1024px) {
-    header h1 {
+    .titulo {
         font-size: 24px;
     }
     .contenido {
