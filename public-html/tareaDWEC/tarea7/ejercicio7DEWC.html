@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ajax-XML</title>
+    <meta charset="utf-8" />
+    <script>
+        function loadXMLDoc() {
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = stateChange;
+            xhr.open("GET", "cd_catalog.xml", true);
+            xhr.send();
+
+            function stateChange() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let xml = xhr.responseXML;
+                    let artistas = xml.getElementsByTagName("CD");
+                    let select = document.getElementById("artistas");
+
+                    for (let i = 0; i < artistas.length; i++) {
+                        let option = document.createElement("option");
+                        let nombreArtista = artistas[i].getElementsByTagName("ARTIST")[0].textContent;;
+                        option.value = nombreArtista;
+                        option.textContent = nombreArtista;
+                        select.appendChild(option);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Comunicacion asíncrona con AJAX haciendo uso de XML</h1>
+    <hr />
+    <p>Artistas: <select id="artistas"></select></p>
+    <button type="button" onclick="loadXMLDoc()">Rellena la lista desplegable</button>
+    <p id="demo"></p>
+</body>
+
+</html>
