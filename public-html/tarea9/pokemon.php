@@ -8,12 +8,29 @@
     <title>Formulario login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./main.css">
 </head>
 
 <body>
     <?php
 
-    if(isset($_SESSION['offset'])){
+    if (isset($_GET['next'])) {
+        if (isset($_SESSION['offset'])) {
+            $_SESSION['offset'] = intval($_SESSION['offset']) + 20;
+        } else {
+            $_SESSION['offset'] = 20;
+        }
+    }
+
+    if (isset($_GET['previous'])) {
+        if (isset($_SESSION['offset'])) {
+            $_SESSION['offset'] = intval($_SESSION['offset']) - 20;
+        } else {
+            $_SESSION['offset'] = 20;
+        }
+    }
+
+    if (isset($_SESSION['offset'])) {
         $currentOffset = $_SESSION['offset'];
     } else {
         $currentOffset = 0;
@@ -63,36 +80,28 @@
 
         return $detail;
     }
-
     ?>
-
     <body>
         <div id="lista">
-            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-                <input type="submit" name="next" value="Next">
-                <?php
-                if (isset($_POST['next'])) {
-                    if(isset($_SESSION['offset'])) {
-                        $_SESSION['offset'] = intval($_SESSION['offset']) + 20;
-                    } else {
-                        $_SESSION['offset'] = 20;
-                    }
-                }
-                ?>
-            </form>
-            <table id="pokemons">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Detalle</th>
-                    </tr>
-                </thead>
-                <?php
-                global $currentOffset;
-                $tag = getPokemons($currentOffset);
-                echo $tag;
-                ?>
-            </table>
+            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="get" name="detalle">
+                <input type="submit" name="previous" value="Previous">
+
+            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="get" name="detalle">
+                    <input type="submit" name="next" value="Next">
+                </form>
+                <table id="pokemons">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Detalle</th>
+                        </tr>
+                    </thead>
+                    <?php
+                    global $currentOffset;
+                    $tag = getPokemons($currentOffset);
+                    echo $tag;
+                    ?>
+                </table>
         </div>
         <div id="detalle">
             <div>
@@ -104,5 +113,4 @@
             </div>
         </div>
     </body>
-
 </html>
